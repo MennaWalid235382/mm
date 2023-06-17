@@ -7,10 +7,8 @@ jobs:
     steps:
     - name: Download Launcher
       run: |
-        Invoke-WebRequest https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/download/v1.0.0-pre/sd.webui.zip -OutFile sd.webui.zip
+        Invoke-WebRequest https://github.com/AUTOMATIC1111/stable-diffusion-webui/archive/refs/heads/master.zip -OutFile stable-diffusion-webui-master.zip
     - name: Extracting File
-      run: Expand-Archive sd.webui.zip
-    - name: update bat
-      run: cmd /c update.bat
+      run: Expand-Archive stable-diffusion-webui-master.zip
     - name: run
-      run: cmd /c run.bat
+      run: cmd /c webui-user.bat
